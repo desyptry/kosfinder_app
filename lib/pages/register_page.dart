@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -96,8 +97,7 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: _confirmC,
                 obscureText: true,
-                decoration:
-                    const InputDecoration(labelText: 'Konfirmasi Password'),
+                decoration: const InputDecoration(labelText: 'Konfirmasi Password'),
                 validator: (v) =>
                     v != _passC.text ? 'Password tidak sama' : null,
               ),
