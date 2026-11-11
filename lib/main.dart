@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'app_keys.dart';
 import 'pages/login_page.dart';
+import 'pages/home_page.dart';
+import 'services/auth_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +30,11 @@ class KosFinderApp extends StatelessWidget {
         colorSchemeSeed: Colors.indigo,
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      navigatorKey: navigatorKey,
+      scaffoldMessengerKey: messengerKey,
+      home: AuthService.instance.isLoggedIn
+          ? const HomePage()
+          : const LoginPage(),
     );
   }
 }
