@@ -69,10 +69,12 @@ Widget build(BuildContext context) {
               subtitle: Text('${p.email} • ${p.role}'),
             ),
             const Divider(),
+            
             const ListTile(
               leading: Icon(Icons.list),
               title: Text('Daftar Kos'),
             ),
+            
             if (p.isOwner || p.isAdmin)
               const ListTile(
                 leading: Icon(Icons.home_work),
