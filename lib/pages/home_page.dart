@@ -19,10 +19,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    NotificationService.instance.requestPermission();
+    NotificationService.instance.init();
     _profileFuture = ProfileService().getMyProfile();
-    NotificationService.instance.getToken();
-    NotificationService.instance.listenTokenRefresh();
   }
 
   Future<void> _logout() async {
